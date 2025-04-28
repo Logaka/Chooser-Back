@@ -1,7 +1,7 @@
 package sdu.project.chooserback.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException {
-    public ResourseNotFoundException(String message) {
+    public ResourceNotFoundException(String message) {
         super(message);
     }
 }
