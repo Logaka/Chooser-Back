@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-jdk as build
+FROM eclipse-temurin:21-jdk AS build
 
 WORKDIR /app
 
@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y maven
 
 RUN mvn clean package -DskipTests
 
-#основная с-temurin:21-jre
+FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
