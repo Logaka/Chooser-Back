@@ -1,14 +1,14 @@
 package sdu.project.chooserback.dto;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sdu.project.chooserback.enums.Level;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class TaskDto {
-    @NotNull
-    private String task;
-}
+public class TaskResponseDto {
+    private String text;
+    private Level level;
+} 

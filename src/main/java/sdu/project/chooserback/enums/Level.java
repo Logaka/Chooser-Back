@@ -1,5 +1,5 @@
-package sdu.project.chooserback.models;
+package sdu.project.chooserback.enums;
 
 public enum Level {
-    EASY, SIMPLE, HARD
+    EASY, MEDIUM, HARD
 }

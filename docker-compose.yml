@@ -11,6 +11,27 @@ services:
       - '5454:5432'
     volumes:
       - chooser-db-volume:/var/lib/postgresql/data
+    networks:
+      - chooser-network
+
+  app:
+    build: .
+    container_name: chooser-app
+    depends_on:
+      - db
+    environment:
+      POSTGRES_URL: jdbc:postgresql://chooser-db:5432/${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - '8080:8080'
+    networks:
+      - chooser-network
+
 volumes:
   chooser-db-volume:
     name: chooser-db-volume
+
+networks:
+  chooser-network:
+    name: chooser-network
